@@ -8,8 +8,7 @@
 
 			//Iterate over the current set of matched elements
     		return this.each(function() {
-
-
+=
 
 				$('input,textarea,select').bind('blur',function(){
 
