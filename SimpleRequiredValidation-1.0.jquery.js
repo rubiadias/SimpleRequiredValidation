@@ -1,4 +1,10 @@
-
+/*!
+ * jQuery SimpleRequiredValidation
+ * https://github.com/ricardodantas/SimpleRequiredValidation
+ *
+ * Copyright 2013 Ricardo Dantas
+ * Released under the MIT license
+ */
 (function($){
 
     $.fn.extend({
