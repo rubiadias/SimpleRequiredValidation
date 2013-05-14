@@ -1,34 +1,40 @@
 (function($){
 
- 	$.fn.extend({
+    $.fn.extend({
 
- 		SimpleRequiredValidation: function() {
+        SimpleRequiredValidation: function(options) {
 
-    		return this.each(function() {
+         var settings = $.extend({
+              "font_color": "red",
+              "border_color": "red",
+              'message': 'Preencha o campo abaixo'
+          }, options);
 
-				$('input,textarea,select').bind('blur',function(){
+            return this.each(function() {
 
-					var $value = $.trim($(this).val());
+                $('input,textarea,select').bind('blur',function(){
 
-					if($(this).attr('required') && $value==''){
+                    var $value = $.trim($(this).val());
 
-						$(this).css('border','1px solid red').focus();
+                    if($(this).attr('required') && $value==''){
 
-						if($('small#warningMessage').length <= 0)
-							$('<small id="warningMessage">Preencha o campo abaixo</small>').insertAfter(this);
+                        $(this).css('border','1px solid '+settings.font_color).focus();
 
-					}else{
+                        if($('small#warningMessage').length <= 0)
+                            $('<small style="color:'+settings.font_color+';" id="warningMessage">'+settings.message+'</small>').insertAfter(this);
 
-						$(this).css('border','1px solid #ccc');
+                    }else{
 
-						$('small#warningMessage').remove();
-					}
-				});
+                        $(this).reset();
+
+                        $('small#warningMessage').remove();
+                    }
+                });
 
 
 
-    		});
-    	}
-	});
+            });
+        }
+    });
 
 })(jQuery);
