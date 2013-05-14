@@ -1,8 +1,6 @@
 (function($){
 
-	//Attach this new method to jQuery
  	$.fn.extend({
-
 
  		SimpleRequiredValidation: function() {
 
