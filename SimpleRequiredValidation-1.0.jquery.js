@@ -4,7 +4,7 @@
  	$.fn.extend({
 
  		//This is where you write your plugin's name
- 		pluginname: function() {
+ 		SimpleRequiredValidation: function() {
 
 			//Iterate over the current set of matched elements
     		return this.each(function() {
