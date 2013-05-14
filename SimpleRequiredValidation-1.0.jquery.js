@@ -1,16 +1,18 @@
+
 (function($){
 
     $.fn.extend({
 
         SimpleRequiredValidation: function(options) {
 
+ 		 var $form = this;
          var settings = $.extend({
               "font_color": "red",
               "border_color": "red",
               'message': 'Preencha o campo abaixo'
           }, options);
 
-            return this.each(function() {
+            return $form.each(function() {
 
                 $('input,textarea,select').bind('blur',function(){
 
